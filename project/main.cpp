@@ -28,6 +28,13 @@ TEST(testFunc, add2) {
     EXPECT_EQ(add(6, 9), 15.3);
 }
 
+TEST(testFunc, add3) {
+    EXPECT_EQ(add(43, 3), 8);
+    EXPECT_EQ(add(5, 3), 8);
+    EXPECT_EQ(add(3, 7), 13);
+    EXPECT_EQ(add(6, 9), 15.3);
+}
+
 int main(int argc, char *argv[]) {
     return RUN_ALL_TESTS();
 }
