@@ -24,6 +24,7 @@ int main() {
     TEST(quick_sort_v3, arr, MAX_N);
     TEST(quick_sort_v4, arr, MAX_N);
     TEST(quick_sort_v5, arr, MAX_N);
+    TEST(quick_sort_v6, arr, MAX_N);
     free(arr);
     #undef MAX_N
     #define MAX_N 50000
@@ -33,6 +34,7 @@ int main() {
     TEST(quick_sort_v3, arr, MAX_N);
     TEST(quick_sort_v4, arr, MAX_N);
     TEST(quick_sort_v5, arr, MAX_N);
+    TEST(quick_sort_v6, arr, MAX_N);
     #undef MAX_N
     return 0;
 }

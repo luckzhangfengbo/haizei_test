@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "insert_sort.h"
 #define swap(a, b) {\
     __typeof(a) __c = a;\
     a = b, b = __c;\
@@ -101,5 +102,25 @@ void quick_sort_v5(int * arr, int l, int r) {
         quick_sort_v5(arr, l, y);
         l = x;
     }
+    return ;
+}
+//混合算法优化
+
+void quick_sort_v6(int * arr, int l, int r) {
+    while (r - l > 16) {
+        int x = l, y = r, z = median(arr, l, r);
+        do {
+            while (arr[x] < z)++x;
+            while (arr[y] > z)--y;
+            if (x <= y) {
+                swap(arr[x], arr[y]);
+                ++x, --y;
+            }
+        } while (x <= y);
+        quick_sort_v6(arr, l, y);
+        l = x;
+    }
+    if (l < r) unguarded_insert_sort(arr, l , r);
+    
     return ;
 }
